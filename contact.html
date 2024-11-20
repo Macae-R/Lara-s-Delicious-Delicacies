@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional CSS to center the content */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center items horizontally */
+            justify-content: center; /* Center items vertically */
+            height: 100vh; /* Full viewport height */
+            text-align: center; /* Center text */
+            margin: 0; /* Remove default margin */
+            padding-top: 100px; /* Padding to avoid overlap with fixed header */
+        }
+
+        header {
+            position: fixed; /* Fix the header at the top */
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #4e342e; /* Dark brown color */
+            padding: 20px;
+            z-index: 1000; /* Ensure it stays on top */
+        }
+
+        header h1 {
+            color: #f5f0e1; /* Light color for text */
+        }
+
+        nav a {
+            margin: 0 15px; /* Spacing between links */
+            color: #f5f0e1; /* Light color for links */
+            text-decoration: none; /* Remove underline */
+        }
+
+        nav a:hover {
+            text-decoration: underline; /* Underline on hover for links */
+        }
+
+        footer {
+            width: 100%; /* Full width for footer */
+            text-align: center; /* Center text in footer */
+        }
+
+        .owner-contact-info {
+            margin-top: 20px; /* Space above the contact info */
+            padding: 20px;
+            background-color: #f5f0e1; /* Match the background color */
+            border: 1px solid #4e342e; /* Border to define the section */
+            border-radius: 8px; /* Rounded corners */
+            max-width: 300px; /* Max width for the contact info section */
+            width: 100%; /* Full width for smaller screens */
+            box-sizing: border-box; /* Include padding and border in width */
+            overflow-wrap: break-word; /* Break long words onto the next line */
+        }
+
+        a {
+            color: #4e342e; /* Link color */
+        }
+
+        a:hover {
+            text-decoration: underline; /* Underline on hover for links */
+        }
+
+        .logo {
+            width: 100px; /* Set the logo size */
+            height: auto; /* Maintain aspect ratio */
+            margin-left: auto; /* Align logo to the right */
+            margin-right: 20px; /* Space from the right edge */
+            float: right; /* Float the logo to the right */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Lara's Delicious Delicacies</h1>
+        <img src="./f.jpg" alt="Lara's Delicious Delicacies" class="logo">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="catalogue.html">Catalogue</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About Us</a>
+        </nav>
+    </header>
+
+    <!-- Owner's Contact Information -->
+    <div class="owner-contact-info">
+        <h3>Contact Us</h3>
+        <p> </p>
+        <p><strong>Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=61563777255837" target="_blank">https://www.facebook.com/profile.php?id=61563777255837</a></p>
+        <p><strong>Phone:</strong> +69956 268 4383</p>
+        <p><strong>Email:</strong> <a href="mailto:macaeramos@gmail.com">macaeramos@gmail.com</a></p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Lara's Delicious Delicacies. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Toggle navigation menu for mobile view
+        function toggleMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('active');
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const links = document.querySelectorAll("nav a");
+
+            links.forEach(link => {
+                link.addEventListener("click", function(event) {
+                    event.preventDefault(); // Prevent the default link click
+
+                    const targetUrl = this.href; // Get the URL of the link
+
+                    // Add fade-out class
+                    document.body.classList.add("fade-out");
+
+                    // Wait for the animation to complete before navigating
+                    setTimeout(() => {
+                        window.location.href = targetUrl; // Navigate to the new page
+                    }, 300); // Match this duration with the CSS transition duration
+                });
+            });
+        });
+    </script>
+</body>
+</html>

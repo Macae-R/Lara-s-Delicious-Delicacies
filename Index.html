@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lara's Delicious Delicacies</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Lara's Delicious Delicacies</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="catalogue.html">Catalogue</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About Us</a>
+        </nav>
+        <img src="./f.jpg" alt="Logo" class="logo">
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h2>Lara's Delicious Delicacies</h2>
+        <p>Dessert o'clock is the best time of the day treat yourself with our delectable yema flavored spread</p>
+    <!-- Centered Image Section -->
+    <div class="image-container">
+        <img src="./g.jpg" alt="Descriptive Alt Text" class="centered-image">
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Lara's Delicious Delicacies. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+<script>
+    // Toggle navigation menu for mobile view
+    function toggleMenu() {
+        const navMenu = document.getElementById('nav-menu');
+        navMenu.classList.toggle('active');
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const links = document.querySelectorAll("nav a");
+
+        links.forEach(link => {
+            link.addEventListener("click", function(event) {
+                event.preventDefault(); // Prevent the default link click
+
+                const targetUrl = this.href; // Get the URL of the link
+
+                // Add fade-out class
+                document.body.classList.add("fade-out");
+
+                // Wait for the animation to complete before navigating
+                setTimeout(() => {
+                    window.location.href = targetUrl; // Navigate to the new page
+                }, 300); // Match this duration with the CSS transition duration
+            });
+        });
+    });
+</script>

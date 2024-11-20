@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Lara's Delicious Delicacies</h1>
+        <img src="./f.jpg" alt="Lara's Delicious Delicacies" class="logo">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="catalogue.html">Catalogue</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About Us</a>
+        </nav>
+    </header>
+    
+    <!-- Catalogue Section -->
+    <div class="main-content" id="catalogue">
+        <h2>Our Flavors</h2>
+        <div class="flavor-list">
+            <div class="flavor-item" onclick="this.classList.toggle('flipped')">
+                <div class="flavor-inner">
+                    <div class="flavor-front">
+                        <img src="./a.jpg" alt="Yema Original" class="flavor-image">
+                        <h3>Yema Original</h3>
+                    </div>
+                    <div class="flavor-back">
+                        <p>A rich and creamy chocolate spread that will satisfy any chocolate lover.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flavor-item" onclick="this.classList.toggle('flipped')">
+                <div class="flavor-inner">
+                    <div class="flavor-front">
+                        <img src="./b.jpg" alt="Chunky Peanut Butter" class="flavor-image">
+                        <h3> Chunky Peanut Butter</h3>
+                    </div>
+                    <div class="flavor-back">
+                        <p>Chunky peanut butter is prepared by leaving some of the peanut bits still whole.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flavor-item" onclick="this.classList.toggle('flipped')">
+                <div class="flavor-inner">
+                    <div class="flavor-front">
+                        <img src="./c.jpg" alt="Chocolate Overload" class="flavor-image">
+                        <h3>Chocolate Overload</h3>
+                    </div>
+                    <div class="flavor-back">
+                        <p>A dark chocolate taste. stronger nutty chocolatey flavor.Infused in a delicious yema base.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flavor-item" onclick="this.classList.toggle('flipped')">
+                <div class="flavor-inner">
+                    <div class="flavor-front">
+                        <img src="./d.jpg" alt="Milk Chocolate" class="flavor-image">
+                        <h3>Milk Chocolate</h3>
+                    </div>
+                    <div class="flavor-back">
+                        <p>A milder chocolate and milk infused in a yema base.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flavor-item" onclick="this.classList.toggle('flipped')">
+                <div class="flavor-inner">
+                    <div class="flavor-front">
+                        <img src="./e.jpg" alt="Creamy Peanut Butter" class="flavor-image">
+                        <h3>Creamy Peanut Butter</h3>
+                    </div>
+                    <div class="flavor-back">
+                        <p>Smooth,creamy and made with that fresh-roasted peanut taste you love.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Lara's Delicious Delicacies. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+<script>
+    // Toggle navigation menu for mobile view
+    function toggleMenu() {
+        const navMenu = document.getElementById('nav-menu');
+        navMenu.classList.toggle('active');
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const links = document.querySelectorAll("nav a");
+
+        links.forEach(link => {
+            link.addEventListener("click", function(event) {
+                event.preventDefault(); // Prevent the default link click
+
+                const targetUrl = this.href; // Get the URL of the link
+
+                // Add fade-out class
+                document.body.classList.add("fade-out");
+
+                // Wait for the animation to complete before navigating
+                setTimeout(() => {
+                    window.location.href = targetUrl; // Navigate to the new page
+                }, 300); // Match this duration with the CSS transition duration
+            });
+        });
+    });
+</script>

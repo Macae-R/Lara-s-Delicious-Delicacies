@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: #f5f0e1; /* Light brown background */
+            color: #4e342e; /* Dark brown text */
+        }
+        header, footer {
+            width: 100%;
+            text-align: center;
+        }
+        .about-content {
+            max-width: 800px; /* Limit width for better readability */
+            margin: 20px; /* Margin around the content */
+            padding: 20px; /* Padding inside the content area */
+            background-color: white; /* White background for contrast */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5em; /* Heading size */
+        }
+        h2 {
+            margin-top: 20px; /* Spacing above subheadings */
+            font-size: 1.8em; /* Subheading size */
+        }
+        p {
+            margin: 15px 0; /* Spacing between paragraphs */
+            line-height: 1.6; /* Better readability */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>About Us</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="catalogue.html">Catalogue</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About Us</a>
+        </nav>
+    </header>
+
+    <!-- About Content -->
+    <div class="about-content">
+        <h2>Lara's Delicious Delicacies</h2>
+        <img src="./f.jpg" alt="Lara's Delicious Delicacies" class="logo">
+        <p>
+            At Heaven's Delight, we believe that every meal deserves a touch of sweetness. Our signature product, 
+            <strong>Heaven's Delight Spread</strong>, is crafted from the finest natural ingredients, carefully selected to 
+            bring you an exquisite taste experience that delights your senses.
+        </p>
+        <p>
+            Our journey began with a passion for quality and flavor. After experimenting with various recipes, we 
+            perfected a unique blend that combines the richness of natural sweeteners with the delightful essence of 
+            real fruit. Whether you spread it on your morning toast, drizzle it over pancakes, or use it as an 
+            ingredient in your favorite desserts, Heaven's Delight Spread adds a touch of magic to any dish.
+        </p>
+        <h2>Our Mission</h2>
+        <p>
+            Our mission is to provide a delicious and healthy alternative to traditional spreads, allowing you to 
+            indulge without guilt. We are committed to sustainability and support local farmers, ensuring that our 
+            ingredients are not only high quality but also ethically sourced.
+        </p>
+        <h2>Join Us on This Sweet Journey</h2>
+        <p>
+            We invite you to explore our catalogue and discover the variety of flavors we offer. From classic fruit 
+            blends to innovative new tastes, there’s something for everyone to enjoy. Thank you for being a part of 
+            our community, and we hope you find joy in every jar of Heaven's Delight Spread!
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Lara's Delicious Delicacies. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+<script>
+    // Toggle navigation menu for mobile view
+    function toggleMenu() {
+        const navMenu = document.getElementById('nav-menu');
+        navMenu.classList.toggle('active');
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const links = document.querySelectorAll("nav a");
+
+        links.forEach(link => {
+            link.addEventListener("click", function(event) {
+                event.preventDefault(); // Prevent the default link click
+
+                const targetUrl = this.href; // Get the URL of the link
+
+                // Add fade-out class
+                document.body.classList.add("fade-out");
+
+                // Wait for the animation to complete before navigating
+                setTimeout(() => {
+                    window.location.href = targetUrl; // Navigate to the new page
+                }, 300); // Match this duration with the CSS transition duration
+            });
+        });
+    });
+</script>
